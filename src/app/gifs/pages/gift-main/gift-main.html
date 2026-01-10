@@ -1,0 +1,8 @@
+<section class="bg-slate-100 flex text-slate-300 selection:bg-blue-600 selection:text-white max-[639px]:relative">
+  <app-menu class="max-[639px]:absolute max-[639px]:z-20 max-[639px]:w-full max-[639px]:transform max-[639px]:-translate-y-full max-[639px]:transition-transform max-[639px]:duration-500 max-[639px]:ease-in-out" [ngClass]="{
+    'max-[639px]:translate-y-0':menuUIService.isMenuOpen()
+  }"></app-menu>
+  <div class="flex-1 p-6 max-h-dvh overflow-auto">
+    <router-outlet></router-outlet>
+  </div>
+</section>

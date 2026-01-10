@@ -1,0 +1,10 @@
+<div> <img [ngSrc]="srcImg()" [width]="wImg()" [height]="hImg()" class="w-full h-auto rounded-base" alt="trending-image" [cdkCopyToClipboard]="srcImg()" (cdkCopyToClipboardCopied)="copied()">
+</div>
+@if (showToast()) {
+  <div class="fixed bottom-10 left-1/2 -translate-x-1/2 z-100 animate-bounce-in">
+    <div class="bg-slate-900/90 backdrop-blur-md text-white px-6 py-3 rounded-full border border-white/10 shadow-2xl flex items-center gap-2">
+      <span class="text-green-400">✅</span>
+      <span class="text-sm font-medium">¡Enlace copiado al portapapeles!</span>
+    </div>
+  </div>
+}

@@ -1,0 +1,20 @@
+<div id="menu" class="bg-gray-900 text-slate-300 w-2xs max-[639px]:w-full h-dvh max-[639px]:relative">
+  <div class="hidden max-[639px]:flex max-[639px]:w-full max-[639px]:justify-endnpm install @angular/cdk">
+    <button id="btnHideMenu" (click)="menuUIService.toggleMenu()" class="max-[639px]:p-2"><svg
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
+        class="w-6 h-6 text-white" >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+
+    </button>
+  </div>
+  <menu-sidebar-logo></menu-sidebar-logo>
+  <menu-sidebar-profile></menu-sidebar-profile>
+  <menu-sidebar-nav [navItems]="navItemService.arrayNavItems"></menu-sidebar-nav>
+  <button id="btnShowMenu" (click)="menuUIService.toggleMenu()"
+    class="hidden max-[639px]:absolute max-[639px]:-bottom-6 max-[639px]:bg-gray-900 max-[639px]:w-full max-[639px]:flex max-[639px]:justify-center"><svg
+      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+      class="w-6 h-6 text-white">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg></button>
+</div>
