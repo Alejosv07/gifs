@@ -2,10 +2,12 @@ import { Component, effect, inject } from '@angular/core';
 import { TrendingPage } from "../trending-page/trending-page";
 import { TrendringCardService } from '../../service/trendring-card-service';
 import { HistoryService } from '../../service/history.service';
+import { MenuUIService } from '../../service/menu-uiservice';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-search',
-  imports: [TrendingPage],
+  imports: [TrendingPage, NgClass],
   templateUrl: './search.html',
   styles: ``,
 })
@@ -15,6 +17,7 @@ export class Search {
   public gifservice = inject(TrendringCardService);
 
   public historyService = inject(HistoryService);
+  public menuUIService = inject(MenuUIService);
 
   constructor() {
   }

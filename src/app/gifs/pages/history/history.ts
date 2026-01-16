@@ -13,20 +13,20 @@ import { Router } from '@angular/router';
 export class History {
   private historyService = inject(HistoryService);
   public word = input.required<string>();
-  public arrayHistory = signal<Set<GifInterface>>(new Set());
+  public arrayHistory = signal<GifInterface[]>([]);
   public router = inject(Router);
 
   constructor() {
-    effect(() => {
-      this.loadData();
-      console.log("disparado");
-      console.log(this.arrayHistory.length);
+  effect(() => {
+    const word = this.word();
+    console.log("efec disparado");
 
-
-    });
+    this.loadData(word);
+  });
   }
 
-  loadData = () => {
-    this.arrayHistory.set(new Set(this.historyService.data().search.find(e => e.path === this.word())?.result ?? []));
+  loadData = (word:string) => {
+    const array = this.historyService.data().search.find(e => e.path === word)?.result ?? [];
+    this.arrayHistory.set([...array]);
   }
 }

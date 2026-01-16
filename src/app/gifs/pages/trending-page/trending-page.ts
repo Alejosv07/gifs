@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, viewChild } from '@angular/core';
 import { TrendringCardService } from '../../service/trendring-card-service';
 import { ActivatedRoute } from '@angular/router';
 import { ListGif } from "../../components/trending/list-gif/list-gif";
@@ -12,14 +12,15 @@ import { ListGif } from "../../components/trending/list-gif/list-gif";
 export class TrendingPage {
   private route = inject(ActivatedRoute);
   public cardsService = inject(TrendringCardService);
+
   constructor(){
     const config = this.route.snapshot.data['loadOnInit'];
 
+    this.cardsService.resetData();
     if (config) {
       this.cardsService.loadTrending();
-    }else{
-      this.cardsService.resetData();
     }
   }
+
 
 }

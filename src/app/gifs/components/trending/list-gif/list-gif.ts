@@ -9,7 +9,7 @@ import { Card } from "../card/card";
   styles: ``,
 })
 export class ListGif {
-  public cardsrc = input.required<Set<GifInterface>>();
+  public cardsrc = input.required<GifInterface[]>();
 
 
 }

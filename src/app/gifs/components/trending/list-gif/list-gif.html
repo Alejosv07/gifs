@@ -1,5 +1,6 @@
 <div class="grid gap-4">
-  @for (item of cardsrc(); track $index) {
+  @for (item of cardsrc(); track item)
+  {
   @if ($index % 4 == 0) {
   <trending-card [srcImg]="item.url" [wImg]="item.width" [hImg]="item.height"></trending-card>
   }
@@ -7,7 +8,8 @@
 </div>
 
 <div class="grid gap-4">
-  @for (item of cardsrc(); track $index) {
+  @for (item of cardsrc(); track item)
+ {
   @if ($index % 4 == 1) {
   <trending-card [srcImg]="item.url" [wImg]="item.width" [hImg]="item.height"></trending-card>
   }
@@ -15,7 +17,8 @@
 </div>
 
 <div class="grid gap-4">
-  @for (item of cardsrc(); track $index) {
+  @for (item of cardsrc(); track item)
+ {
   @if ($index % 4 == 2) {
   <trending-card [srcImg]="item.url" [wImg]="item.width" [hImg]="item.height"></trending-card>
   }
@@ -23,7 +26,8 @@
 </div>
 
 <div class="grid gap-4">
-  @for (item of cardsrc(); track $index) {
+  @for (item of cardsrc(); track item)
+ {
   @if ($index % 4 == 3) {
   <trending-card [srcImg]="item.url" [wImg]="item.width" [hImg]="item.height"></trending-card>
   }

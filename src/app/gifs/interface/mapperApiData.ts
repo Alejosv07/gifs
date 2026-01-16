@@ -1,5 +1,6 @@
 import { GIFInterfacesAPI, Datum } from './Gif.InterfacesApi';
 import { GifInterface } from './GifInterface';
+
 export class mapperApiData {
   giftApiToGifInterface = (item: Datum): GifInterface=>{
     return {
@@ -11,7 +12,7 @@ export class mapperApiData {
     }
   }
 
-  gifsApiArrayToGif = (items: GIFInterfacesAPI):Set<GifInterface>=>{
-    return new Set(items.data.map(this.giftApiToGifInterface));
+  gifsApiArrayToGif = (items: GIFInterfacesAPI):GifInterface[]=>{
+    return items.data.map(this.giftApiToGifInterface);
   }
 }
